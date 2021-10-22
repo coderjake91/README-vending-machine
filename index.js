@@ -33,6 +33,32 @@ const collectREADMEInfo = () => {
         },
         {
             type: 'input',
+            name: 'authorName',
+            message: 'What is your github profile name? (Required)',
+            validate: nameInput => {
+                if(!nameInput) {
+                    console.log('Please enter your github profile name!');
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'projectRepo',
+            message: "What is the project's github repository name? (Required)",
+            validate: repoName => {
+                if(!repoName) {
+                    console.log('Please enter your github repository name!');
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        },
+        {
+            type: 'input',
             name: 'description',
             message: 'Please provide a description of your project. (Required)',
             validate: description => {
@@ -60,7 +86,7 @@ const collectREADMEInfo = () => {
         {
             type: 'input',
             name: 'usage',
-            message: 'Please provide instructions for app use (Required). You can also include a screenshot to your README (if desired) by adding the screeshot to the assets/images folder in the application directory',
+            message: 'Please provide instructions for app use (Required).',
             validate: usage => {
                 if(!usage){
                     console.log('Please enter usage instructions for your application!');
@@ -72,19 +98,50 @@ const collectREADMEInfo = () => {
         },
         {
             type: 'confirm',
+            name: 'confirmScreenshot',
+            message: 'Would you like to include a screenshot for your applicaion?',
+            default: true,
+        },
+        {
+            type: 'input',
+            name: 'screenshot',
+            message: 'You can also include a screenshot to your README by adding the screeshot to the ./assets/images/ folder in the application directory (Please input the ENTIRE file name including the file extension...example: myImage.jpg, IMPORTANT: complete adding the screenshot to the directory now before completing the other prompts',
+            when: ({confirmScreenshot}) => {
+                if(confirmScreenshot){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'confirm',
             name: 'confirmTesting',
             message: 'Would you like to include testing information for your applicaion?',
             default: true,
         },
         {
             type: 'input',
-            name: 'about',
+            name: 'testInfo',
             message: 'Please provide your app testing information:',
             when: ({confirmTesting}) => {
                 if(confirmTesting){
                     return true;
                 } else {
                     return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'authorEmail',
+            message: 'Please provide an email that you would like to be contacted at for additional app/contribution questions (Required)',
+            validate: email => {
+                if(!email){
+                    console.log('Please enter an email for your questions section!');
+                    return false;
+                } else {
+                    return true;
                 }
             }
         }
@@ -135,8 +192,8 @@ const collectContributors = (infoREADME) => {
 collectREADMEInfo()
     .then(collectContributors)
     .then(infoREADME => {
-        //return generateREADME(infoREADME);
-        return JSON.stringify(infoREADME);
+        return generateREADME(infoREADME);
+        //return JSON.stringify(infoREADME);
     })
     .then(markdown => {
         return writeFile(markdown);
