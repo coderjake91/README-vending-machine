@@ -36,7 +36,7 @@ Make sure the latest version of Node.js is installed on your local machine, clon
 
 ## Usage
 
-Initiate the app by running npm start or node index, follow the commandline prompts, get your generated README from the 'dist' folder
+Initiate the app by running npm start or node index, follow the command line prompts, get your generated README from the 'dist' folder
 
 ## Credits
 
