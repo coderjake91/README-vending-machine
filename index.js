@@ -15,6 +15,10 @@ const collectREADMEInfo = () => {
     =======================================
 
     Let's generate your project's custom README!
+
+    Please note: 
+    * The License chosen on your repository from github will reflect automatically in the "License" section of the generated README.
+    * The Contributor Section of the README will be auto-polulated with the Contributor Covenant 2.1 linked document badge.
     `);
 
     return inquirer.prompt([

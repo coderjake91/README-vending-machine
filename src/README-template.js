@@ -75,5 +75,5 @@ ${generateTestSection(otherSections)}
 
 ## Questions
 
-Please send additional questions to [@${otherSections.authorName}](https://github.com/${authorName}), email: ${otherSections.authorEmail}`;
+Please send additional questions to [@${otherSections.authorName}](https://github.com/${otherSections.authorName}), email: ${otherSections.authorEmail}`;
 }

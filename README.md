@@ -9,12 +9,12 @@
 
 ## Description
     
-Node CLI application that generates professional README(s)
+Quickly generate high quality README files for open source GitHub projects using this node powered CLI application.
 
 
 ## Screenshot
 
-![screenshot](./assets/images/README.jpg)
+![Application Screenshot](./assets/images/README.jpg)
         
 
 ## Table of Contents
@@ -28,15 +28,15 @@ Node CLI application that generates professional README(s)
     
 ## Installation
 
-install Node, then npm package manager, then run npm install
+Make sure the latest version of Node.js is installed on your local machine, clone the repository, navigate to the root directory of the project folder and run npm install
 
 ## Usage
 
-run npm start from the app directory, then follow the CLI prompts, get README!
+Initiate the app by running npm start or node index, follow the commandline prompts, get your generated README from the 'dist' folder
 
 ## Credits
 
-*[@coderjake2](https://github.com/coderjake2)
+*[@coding-boot-camp](https://github.com/coding-boot-camp)
 
 
 ## Contributing
@@ -48,4 +48,4 @@ no current test method
 
 ## Questions
 
-Please send additional questions to [@coderjake91](https://github.com/coderjake91), email: coderjake@email.com
+Please send additional questions to [@coderjake91](https://github.com/coderjake91), email: jacob.b.frazer@gmail.com
